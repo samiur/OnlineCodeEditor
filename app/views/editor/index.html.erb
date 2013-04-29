@@ -1,0 +1,49 @@
+<div ng-app="myApp">
+  <div ng-controller="codeCtrl">
+    <form ng-submit="runCode()" class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="themeSelect">Theme: </label> 
+        <div class="controls">
+          <select
+              ng-change="changeTheme()"
+              ng-model="themeOption"
+              ng-options="t for t in themes"
+              id="themeSelect">
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="modeSelect">Mode: </label>
+        <div class="controls">
+          <select
+              ng-change="changeMode()"
+              ng-model="languageOption"
+              ng-options="l for l in languages"
+              id="modeSelect">
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="editor">Code: </label>
+        <div class="controls">
+          <textarea name="editor" id="editor" class="span6"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="input">Input: </label>
+        <div class="controls">
+          <textarea ng-model="input" name="input" class="span9" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input type="submit" value="Run" class="btn" />
+        </div>
+      </div>
+    </form>
+    <h2>Output</h2>
+    <div id="output">
+      <pre>{{output}}</pre>
+    </div>
+  </div>
+</div>

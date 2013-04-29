@@ -1,0 +1,6 @@
+:aws_access_key_id: "AKIAJJ3HNQY5TJUUR3RQ"
+:aws_secret_access_key: "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"
+:aws_params:
+  :region: 'us-west-2'
+:load_balanced: false
+:project_tag: "OnlineCodeEditor"
