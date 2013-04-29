@@ -26,10 +26,9 @@ gem 'angularjs-rails'
 gem 'angular-ui-rails'
 
 gem "bson_ext", ">= 1.6.4"
-gem "evolver", :github => 'mongoid/evolver'
-gem "mongoid"
-gem "moped"
-gem "origin"
+gem "aws-sdk"
+gem "dynamoid"
+gem "fake_dynamo"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'

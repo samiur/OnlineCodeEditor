@@ -1,0 +1,15 @@
+production:
+  access_key_id: "AKIAJJ3HNQY5TJUUR3RQ"
+  secret_access_key: "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"
+  dynamo_db_endpoint: dynamodb.ap-southeast-1.amazonaws.com # Set the regional endpoint
+ 
+development:
+  use_ssl: false
+  access_key_id: "AKIAJJ3HNQY5TJUUR3RQ"
+  secret_access_key: "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"
+  dynamo_db_endpoint: localhost
+  dynamo_db_port: 4567
+ 
+test:
+  access_key_id: "AKIAJJ3HNQY5TJUUR3RQ"
+  secret_access_key: "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"

@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rack/mongoid'
-require 'mongoid/railtie'
+#require 'rack/mongoid'
+#require 'mongoid/railtie'
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
@@ -24,8 +24,8 @@ module OnlineCodeEditor
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.autoload_paths += %W(#{config.root}/lib)
-    Mongoid.logger.level = Logger::DEBUG
-    Moped.logger.level = Logger::DEBUG
+   # Mongoid.logger.level = Logger::DEBUG
+   # Moped.logger.level = Logger::DEBUG
 
     # Enable the asset pipeline
     config.assets.enabled = true

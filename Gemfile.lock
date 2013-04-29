@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/mongoid/evolver.git
-  revision: c9ef2832feb5515334caeb2779ed25b7758101d3
-  specs:
-    evolver (0.0.0)
-      mongoid (~> 3.0)
-      railties (~> 3.2)
-
-GIT
   remote: git://github.com/pkurek/flatui-rails.git
   revision: b8f07194c13865cdf21ee4e18058f7661694d4a7
   specs:
@@ -48,6 +40,10 @@ GEM
     angular-ui-rails (0.4.0.2)
     angularjs-rails (1.0.6)
     arel (3.0.2)
+    aws-sdk (1.9.2)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
@@ -82,10 +78,18 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    dynamoid (0.6.1)
+      activemodel
+      aws-sdk
+      tzinfo
     erubis (2.7.0)
     excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fake_dynamo (0.2.0)
+      activesupport
+      json
+      sinatra
     fog (1.10.1)
       builder
       excon (~> 0.20)
@@ -118,12 +122,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    mongoid (3.1.3)
-      activemodel (~> 3.2)
-      moped (~> 1.4.2)
-      origin (~> 1.0)
-      tzinfo (~> 0.3.22)
-    moped (1.4.5)
     multi_json (1.7.2)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -133,11 +131,12 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.5.9)
-    origin (1.1.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-protection (1.5.0)
+      rack
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -168,6 +167,10 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    sinatra (1.3.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.3)
+      tilt (~> 1.3, >= 1.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -188,6 +191,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
@@ -195,6 +199,7 @@ PLATFORMS
 DEPENDENCIES
   angular-ui-rails
   angularjs-rails
+  aws-sdk
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass (>= 2.3.1.0)
   bson_ext (>= 1.6.4)
@@ -203,14 +208,12 @@ DEPENDENCIES
   codemirror-rails
   coffee-rails
   compass-rails
-  evolver!
+  dynamoid
+  fake_dynamo
   flatui-rails!
   jbuilder (~> 1.0.1)
   jquery-rails
   jquery-ui-rails
-  mongoid
-  moped
-  origin
   rails (= 3.2.8)
   sass-rails
   therubyracer
