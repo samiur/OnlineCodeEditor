@@ -1,9 +1,24 @@
 require "capify-ec2/capistrano"
 
 set :application, "OnlineCodeEditor"
-#set :repository,  "set your repository location here"
+set :repository,  "git@github.com:samiur/OnlineCodeEditor.git"
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
+set :scm, :git
+set :branch, "master"
+
+set :ssh_options, { :forward_agent => true }
+set :user, "ec2-user"
+set :use_sudo, true
+set :deploy_to, "/var/www/#{application}"
+
+ssh_options[:forward_agent] = true
+ssh_options[:keys] = ["~/.ssh/samiurrkey.pem"]
+default_run_options[:pty] = true
+
+# The address of the remote host on EC2 (the Public DNS address)
+set :location, "54.214.23.195"
+# The deploy user's password
+# You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 ec2_roles :web

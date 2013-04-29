@@ -50,7 +50,7 @@ myApp = angular.module('myApp', ['ui'])
       
     $http
       method: 'POST'
-      url: "http://localhost:3000/editor/compile"
+      url: "/editor/compile"
       data: post_data,
     .success((data, status, headers, config) ->
       console.log("Received response")
